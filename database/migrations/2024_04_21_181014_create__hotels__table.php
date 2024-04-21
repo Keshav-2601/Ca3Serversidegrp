@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use League\CommonMark\Extension\DescriptionList\Node\Description;
 
 return new class extends Migration
 {
@@ -12,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('destination', function (Blueprint $table) {
-            $table->id();
+        Schema::create('hotels', function (Blueprint $table) {
             $table->string('name');
-            $table->text('description');
-            $table->double('rating');
+            $table->integer('stars');
+            $table->string('description');
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('destination');
+        Schema::dropIfExists('hotels');
     }
 };
