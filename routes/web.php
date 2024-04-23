@@ -1,20 +1,21 @@
 <?php
 
 use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\HotelPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/register',function(){
+    return view('auth.register');
+})->name('register');
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 // Everyone can view the homepage, whether they're logged in or not
 Route::get('/homepage', [HomePageController::class, "index"])->name('homepage');
-
-// Only authenticated users can view the dashboard
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/hotels/{destination_id}',[HotelPageController::class,'show'])->name('hotelshowpage');
 
 // Only authenticated users can edit, update, or delete their profile
 Route::middleware('auth')->group(function () {
