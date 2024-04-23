@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use League\CommonMark\Extension\DescriptionList\Node\Description;
+
 
 return new class extends Migration
 {
@@ -16,8 +16,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->double('rating');
-            $table->timestamps(false);
+            $table->string('rating');
         });
     }
 

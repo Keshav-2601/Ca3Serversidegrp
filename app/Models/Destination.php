@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Destination extends Model
 {
-    protected $fillable = ['name', 'description', 'rating'];
+    protected $table = 'destination';
+    protected $fillable = ['name', 'description'];
 
    
 
