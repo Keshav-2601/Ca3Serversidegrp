@@ -11,11 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('images', function (Blueprint $table) {
-             $table->id();
-             $table->string('image_path');
-             $table->unsignedBigInteger('destination_id');
-             $table->foreign('destination_id')->references('id')->on('destination')->onDelete('cascade');
+       Schema::create('images', function (Blueprint $table) {
+            $table->id();
+            $table->string('destination_img1')();
+            $table->string('destination_img2')();
+            $table->unsignedBigInteger('destination_id');
+            
+            
+           
+            $table->foreign('destination_id')->references('id')->on('destinations')->onDelete('cascade');
+            
+            
+            $table->timestamps();
         });
     }
 
