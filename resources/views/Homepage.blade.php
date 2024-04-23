@@ -18,7 +18,6 @@
                       <td><img src="{{ asset($image->image_path) }}" alt="Image for {{ $destination->name }}"></td>
                 @endforeach
                 <td><a href="{{ route('hotelshowpage', ['destination_id' => $destination->id]) }}" class="btn btn-info">More Info</a></td>
-
             </tr>
         @endforeach
     </tbody>

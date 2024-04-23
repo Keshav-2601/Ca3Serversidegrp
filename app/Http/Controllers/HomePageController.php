@@ -7,7 +7,7 @@ use DB;
 
 class HomePageController extends Controller{
     public function index(){
-        $destination=Destination::with('images')->get();
-        return view('Homepage',['destinations'=>$destination]);
+        $destinations=Destination::with('images')->get();
+        return view('Homepage',['destinations'=>$destinations]);
     }
 }
