@@ -1,24 +1,24 @@
-<table>
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <!-- <th>Description</th> -->
-            <!-- <th>Rating</th> -->
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($destinations as $destination)
+@extends('layouts.app')
+
+@section('content')
+    <h1>Hotels</h1>
+
+    <table>
+        <thead>
             <tr>
-                <td>{{ $destination->id }}</td>
-                <td>{{ $destination->name }}</td>
-                <!-- <td>{{ $destination->description }}</td> -->
-                <!-- <td>{{ $destination->rating }}</td> -->
-                @foreach ($destination->images as $image)
-                      <td><img src="{{ asset($image->image_path) }}" alt="Image for {{ $destination->name }}"></td>
-                @endforeach
-                <td><a href="{{ route('hotelshowpage', ['destination_id' => $destination->id]) }}" class="btn btn-info">More Info</a></td>
+                <th>Name</th>
+                <th>Stars</th>
+                <th>Image</th>
             </tr>
-        @endforeach
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach ($hotels as $hotel)
+                <tr>
+                    <td>{{ $hotel->name }}</td>
+                    <td>{{ $hotel->stars }}</td>
+                    <td><img src="{{ $hotel->image_url }}" alt="Image for {{ $hotel->name }}"></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection
