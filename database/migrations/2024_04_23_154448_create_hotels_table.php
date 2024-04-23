@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('hotels', function (Blueprint $table) {
             $table->string('name');
-            $table->integer('stars');
-            $table->string('description');
+                $table->double('stars');
+                $table->string('image_url');
+                $table->unsignedBigInteger('destination_id');
+                $table->foreign('destination_id')->references('id')->on('destination')->onDelete('cascade');
         });
     }
 
