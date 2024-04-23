@@ -5,13 +5,13 @@ use App\Http\Controllers\HotelPageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register',function(){
-    return view('auth.register');
-})->name('register');
-
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 // Everyone can view the homepage, whether they're logged in or not
 Route::get('/homepage', [HomePageController::class, "index"])->name('homepage');
