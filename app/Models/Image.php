@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    
+    protected $fillable = ['destination_id', 'destination_img1', 'destination_img2'];
+
     public function destination()
     {
-        return $this->belongsTo('App\Models\Destination');
+        return $this->belongsTo(Destination::class);
     }
-    use HasFactory;
 }
