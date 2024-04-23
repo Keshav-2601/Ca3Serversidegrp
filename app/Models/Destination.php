@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Destination extends Model
 {
-    protected $fillable = ['title', 'description'];
-    protected $table = 'destination'; 
+    protected $fillable = ['name', 'description', 'rating'];
+
+   
 
     public function images()
     {
-        return $this->hasMany('App\Models\Image');
+        return $this->hasMany(Image::class);
     }
 }
