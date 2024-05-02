@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\HotelPageController;
 use App\Http\Controllers\ProfileController;
@@ -8,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin', [HomePageController::class,'showAdminPage']
+)->name('admin');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

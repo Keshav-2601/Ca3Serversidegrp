@@ -8,6 +8,11 @@ use DB;
 class HomePageController extends Controller{
     public function index(){
         $destinations=Destination::with('images')->get();
-        return view('Homepage',['destinations'=>$destinations]);
+        return view('Homepage','adminhomepage',['destinations'=>$destinations]);
+
+    }
+    public function showAdminPage(){
+        $destinations=Destination::with('images')->get();
+        return view('adminhomepage', ['destinations'=>$destinations]);
     }
 }
