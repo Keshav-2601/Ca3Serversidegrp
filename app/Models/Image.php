@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    protected $fillable = ['destination_id', 'destination_img1', 'destination_img2'];
+    protected $fillable = ['destination_id', 'image_path'];
 
     public function destination()
     {

@@ -1,22 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Hotels</h1>
+    <h1>Destinations</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Stars</th>
-                <th>Image</th>
+                <th>Description</th>
+                <th>Images</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($hotels as $hotel)
+            @foreach ($destinations as $destination)
                 <tr>
-                    <td>{{ $hotel->name }}</td>
-                    <td>{{ $hotel->stars }}</td>
-                    <td><img src="{{ $hotel->image_url }}" alt="Image for {{ $hotel->name }}"></td>
+                    <td>{{ $destination->name }}</td>
+                    <td>{{$destination->description}}</td>
+                    <td>
+                        @foreach ($destination->images as $image)
+                            <img src="{{ $image->image_path}}" alt="Image for {{ $destination->name }}">
+                        @endforeach
+                    </td>
                 </tr>
             @endforeach
         </tbody>
