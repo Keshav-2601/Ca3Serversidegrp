@@ -31,7 +31,7 @@
     @foreach ($destinations as $destination)
         <div class="destination-item">
             @if ($destination->images->isNotEmpty())
-                
+                <!-- Check if there are images associated with the destination -->
                 <img src="{{ asset($destination->images->first()->image_path) }}" alt="Image for {{ $destination->name }}">
             @else
                 <p>No images available</p>
@@ -40,16 +40,12 @@
                 <h2>{{ $destination->name }}</h2>
                 <p>{{ $destination->description }}</p>
                 <div class="destination-actions">
-                   <td>
                     <a href="{{ route('homepage.editDestination', ['id' => $destination->id]) }}">Edit</a>
-                   </td>
-                   <td>
-                    <form action="{{ route('destroydestination', $destination->id) }}" method="POST">
+                    <form action="{{ route('destination.delete', ['id' => $destination->id]) }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Delete</button>
                     </form>
-                </td>
                 </div>
             </div>
         </div>
