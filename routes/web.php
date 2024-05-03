@@ -32,6 +32,6 @@ Route::middleware('auth')->group(function () {
  Route::get('/create-destination', [HomePageController::class, 'createDestination'])->name('homepage.createDestination');
  Route::post('/destination/store', [HomePageController::class, 'storeDestination'])->name('homepage.storeDestination');
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination'); 
-    
+ Route::get('/destinations/{id}/show',[HomePageController::class,'showDestination']) ->name('homepage.showDestination');  
 
 require __DIR__.'/auth.php';
