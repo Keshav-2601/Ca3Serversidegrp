@@ -40,6 +40,7 @@
                 <h2>{{ $destination->name }}</h2>
                 <p>{{ $destination->description }}</p>
                 <div class="destination-actions">
+                    <a href="{{ route('homepage.showDestination', ['id' => $destination->id]) }}">View</a>
                     <a href="{{ route('homepage.editDestination', ['id' => $destination->id]) }}">Edit</a>
                     <form action="{{ route('destination.delete', ['id' => $destination->id]) }}" method="POST">
                         @csrf
