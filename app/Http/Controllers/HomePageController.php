@@ -157,6 +157,18 @@ public function destroyDestination($id)
 
     return redirect()->route('adminhomepage')->with('success', 'Destination and associated hotel deleted successfully.');
 }
+ public function showDestination($id)
+    {
+        $destination = Destination::find($id);
+
+        if (!$destination) {
+            return redirect()->route('homepage')->with('error', 'Destination not found.');
+        }
+
+        $hotels = Hotels::where('destination_id', $id)->get();
+
+        return view('homepage.show_destination', compact('destination', 'hotels'));
+    }
 
 
 }
