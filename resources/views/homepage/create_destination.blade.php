@@ -20,6 +20,10 @@
                                 <label for="description">Description</label>
                                 <textarea class="form-control" id="description" name="description"></textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="rating">Rating</label>
+                                <input class="form-control" id="description" name="rating"></input>
+                            </div>
 
                             <div class="form-group">
                                 <label for="image">Destination Image</label>

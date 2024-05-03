@@ -26,7 +26,14 @@ class HomePageController extends Controller{
         $destination = Destination::find($id);
         $destination->delete();
         return redirect()->route('admin');
- }
+    }
+    // public function edit($id){
+         
+    //      return view('Editpage');
+    // }
+    // public function editdata(){
+
+    // }
     public function storeDestination(Request $request)
     {
         $request->validate([
@@ -46,6 +53,7 @@ class HomePageController extends Controller{
         $destination = new Destination([
             'name' => $request->name,
             'description' => $request->description,
+            'rating'=>$request->rating
         ]);
     
        

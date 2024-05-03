@@ -31,7 +31,7 @@
     @foreach ($destinations as $destination)
         <div class="destination-item">
             @if ($destination->images->isNotEmpty())
-                <!-- Check if there are images associated with the destination -->
+                
                 <img src="{{ asset($destination->images->first()->image_path) }}" alt="Image for {{ $destination->name }}">
             @else
                 <p>No images available</p>
@@ -40,7 +40,9 @@
                 <h2>{{ $destination->name }}</h2>
                 <p>{{ $destination->description }}</p>
                 <div class="destination-actions">
-                   <td><a>Edit</a></td>
+                   <td>
+                  <button type="button">Edit</button>
+                   </td>
                    <td>
                     <form action="{{ route('destroydestination', $destination->id) }}" method="POST">
                         @csrf

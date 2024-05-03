@@ -12,7 +12,10 @@ Route::get('/', function () {
 // Route::get('/admin', [HomePageController::class,'showAdminPage']
 // )->name('admin');
 
-route::delete('{destination_id}/delete',[HomePageController::class,'destroy'])->name('destroydestination');
+ route::delete('{destination_id}/delete',[HomePageController::class,'destroy'])->name('destroydestination');
+// route::get('{destination_id}/edit',[HomePageController::class,'edit'])->name('editpage');
+// //after editpage
+// route::get('/editeddata',[HomePageController::class,'editdata'])->name('editdestination');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
