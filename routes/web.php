@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/admin', [HomePageController::class,'showAdminPage']
-)->name('admin');
+// Route::get('/admin', [HomePageController::class,'showAdminPage']
+// )->name('admin');
+
+route::delete('{destination_id}/delete',[HomePageController::class,'destroy'])->name('destroydestination');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,7 +28,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
-     Route::get('/admin', [HomePageController::class, 'showAdminPage'])->name('adminhomepage');
+     Route::get('/admin', [HomePageController::class, 'showAdminPage'])->name('admin');
      Route::get('/', [HomePageController::class, 'index'])->name('Homepage');
     Route::get('/create-destination', [HomePageController::class, 'createDestination'])->name('homepage.createDestination');
     Route::post('/destination/store', [HomePageController::class, 'storeDestination'])->name('homepage.storeDestination');

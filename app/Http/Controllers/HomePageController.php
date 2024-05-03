@@ -22,7 +22,11 @@ class HomePageController extends Controller{
     {
         return view('homepage.create_destination');
     }
-
+    public function destroy($id){
+        $destination = Destination::find($id);
+        $destination->delete();
+        return redirect()->route('admin');
+ }
     public function storeDestination(Request $request)
     {
         $request->validate([

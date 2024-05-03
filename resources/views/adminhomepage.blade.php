@@ -40,8 +40,14 @@
                 <h2>{{ $destination->name }}</h2>
                 <p>{{ $destination->description }}</p>
                 <div class="destination-actions">
-                   <td><button>Edit</button></td>
-                    <td><button>Delete</button></td>
+                   <td><a>Edit</a></td>
+                   <td>
+                    <form action="{{ route('destroydestination', $destination->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
                 </div>
             </div>
         </div>
