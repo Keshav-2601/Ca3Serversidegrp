@@ -73,7 +73,69 @@ class HomePageController extends Controller{
     
         return redirect()->route('adminhomepage')->with('success', 'Destination and Hotels created successfully.');
     }
-    
+    public function editDestination($destination_id)
+{
+    $destination = Destination::findOrFail($destination_id);
+    $hotels = $destination->hotels;
+    return view('homepage.edit_destination', compact('destination', 'hotels'));
+}
+
+
+    public function updateDestination(Request $request, $id)
+{
+    $destination = Destination::findOrFail($id);
+
+    $request->validate([
+        'name' => 'required',
+        'description' => 'nullable|string',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'hotel_name' => 'required|string',
+        'stars' => 'required|integer|between:1,5',
+        'hotel_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+
+    $destination->name = $request->name;
+    $destination->description = $request->description;
+
+    if ($request->hasFile('image')) {
+        $imageName = time().'.'.$request->image->extension();  
+        $request->image->move(public_path('images'), $imageName);
+
+        $image = new Image();
+        $image->image_path = 'images/'.$imageName;
+        $image->destination_id = $destination->id;
+        $image->save();
+        
+        if ($destination->images->count() > 0) {
+            $destination->images()->delete();
+        }
+    }
+
+    $destination->save();
+
+    if ($request->has('hotel_name') && $request->has('stars')) {
+        $hotel = $destination->hotels()->first();
+
+        if (!$hotel) {
+            $hotel = new Hotels();
+            $hotel->destination_id = $destination->id;
+        }
+
+        $hotel->name = $request->hotel_name;
+        $hotel->stars = $request->stars;
+
+        if ($request->hasFile('hotel_image')) {
+            $hotelImageName = time().'.'.$request->hotel_image->extension();  
+            $request->hotel_image->move(public_path('images'), $hotelImageName);
+            $hotel->image_url = 'images/'.$hotelImageName;
+        }
+
+        $hotel->save();
+    }
+
+    return redirect()->route('adminhomepage')->with('success', 'Destination and Hotel updated successfully.');
+}
+
 
 
 }
