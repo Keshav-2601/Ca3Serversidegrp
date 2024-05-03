@@ -1,3 +1,84 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+ body {
+           
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            padding: 20px;
+            color:black;
+        }
+
+        .destination-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .destination-item {
+            width: 46%;
+            margin-bottom: 20px;
+            margin-left:40px;
+            background-color: rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            align-items: center;
+            
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .destination-item img {
+            width: 80%;
+            float: center;
+            margin-left: 70px;
+        }
+
+        .destination-info {
+            padding: 20px; /* Add some space around the text */
+    text-align: center; 
+        }
+
+        .destination-info h2 {
+            font-size: 24px;
+            color:black;
+            margin-top: 0;
+        }
+
+        .destination-info p {
+            font-size: 16px;
+            color:black;
+        }
+
+        .destination-actions {
+    margin-top: 10px;
+    text-align: center; /* Center actions horizontally */
+}
+
+        .destination-actions a,
+        .destination-actions button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .destination-actions a:hover,
+        .destination-actions button:hover {
+            background-color: #0056b3;
+        }
+   
