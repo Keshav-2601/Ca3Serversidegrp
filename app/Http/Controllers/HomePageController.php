@@ -27,13 +27,6 @@ class HomePageController extends Controller{
         $destination->delete();
         return redirect()->route('admin');
     }
-    // public function edit($id){
-         
-    //      return view('Editpage');
-    // }
-    // public function editdata(){
-
-    // }
     public function storeDestination(Request $request)
     {
         $request->validate([
