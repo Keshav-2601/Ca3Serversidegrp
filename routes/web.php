@@ -36,6 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/create-destination', [HomePageController::class, 'createDestination'])->name('homepage.createDestination');
     Route::post('/destination/store', [HomePageController::class, 'storeDestination'])->name('homepage.storeDestination');
     Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination'); 
+    Route::delete('/destinations/{id}', [HomePageController::class, 'destroyDestination'])->name('destination.delete');
+    
+    
     
 });
 
