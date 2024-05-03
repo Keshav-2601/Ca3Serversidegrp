@@ -24,7 +24,7 @@
 
     <div class="container">
         <h1>Destinations</h1>
-
+Added  view  button link to view  destination and hotel details for admin
        
 
         <div class="destination-list">
@@ -39,7 +39,9 @@
             <div class="destination-info">
                 <h2>{{ $destination->name }}</h2>
                 <p>{{ $destination->description }}</p>
-              
+               <div class="destination-actions">
+                    <a href="{{ route('homepage.showDestination', ['id' => $destination->id]) }}">View</a>
+                </div>
             </div>
         </div>
     @endforeach
