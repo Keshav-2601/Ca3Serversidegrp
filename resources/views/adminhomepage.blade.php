@@ -41,7 +41,7 @@
                 <p>{{ $destination->description }}</p>
                 <div class="destination-actions">
                    <td>
-                  <button type="button">Edit</button>
+                    <a href="{{ route('homepage.editDestination', ['id' => $destination->id]) }}">Edit</a>
                    </td>
                    <td>
                     <form action="{{ route('destroydestination', $destination->id) }}" method="POST">

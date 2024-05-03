@@ -22,10 +22,10 @@ class HomePageController extends Controller{
     {
         return view('homepage.create_destination');
     }
-    public function destroy($id){
-        $destination = Destination::find($id);
-        $destination->delete();
-        return redirect()->route('admin');
+    //public function destroy($id){
+      //  $destination = Destination::find($id);
+      //  $destination->delete();
+      //  return redirect()->route('admin');
     }
     public function storeDestination(Request $request)
     {
@@ -137,6 +137,19 @@ class HomePageController extends Controller{
     return redirect()->route('adminhomepage')->with('success', 'Destination and Hotel updated successfully.');
 }
 
+public function destroyDestination($id)
+{
+    $destination = Destination::findOrFail($id);
+
+    if ($destination->hotels->isNotEmpty()) {
+        foreach ($destination->hotels as $hotel) {
+            $hotel->delete();
+        }
+    }
+    $destination->delete();
+
+    return redirect()->route('adminhomepage')->with('success', 'Destination and associated hotel deleted successfully.');
+}
 
 
 }
