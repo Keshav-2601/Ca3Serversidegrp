@@ -25,7 +25,7 @@
     <div class="container">
         <h1>Destinations</h1>
 
-        <a href="{{ route('homepage.createDestination') }}">Add Destination</a>
+       
 
         <div class="destination-list">
     @foreach ($destinations as $destination)
