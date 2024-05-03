@@ -22,18 +22,7 @@ class HomePageController extends Controller{
     {
         return view('homepage.create_destination');
     }
-    //public function destroy($id){
-      //  $destination = Destination::find($id);
-      //  $destination->delete();
-      //  return redirect()->route('admin');
-    }
-    // public function edit($id){
-         
-    //      return view('Editpage');
-    // }
-    // public function editdata(){
-
-    // }
+   
     public function storeDestination(Request $request)
     {
         $request->validate([
