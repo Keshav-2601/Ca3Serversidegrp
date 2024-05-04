@@ -91,7 +91,6 @@ public function updateDestination(Request $request, $id)
         'hotel_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
     ]);
 
-    // Disable timestamps for destination
     $destination->timestamps = false;
     $destination->update([
         'name' => $request->name,
@@ -113,7 +112,6 @@ public function updateDestination(Request $request, $id)
         $image->save();
     }
 
-    // Update or create hotel
     if ($request->has('hotel_name') && $request->has('stars')) {
         $hotel = $destination->hotels->first() ?? new Hotels();
         $hotel->destination_id = $destination->id;
@@ -121,7 +119,6 @@ public function updateDestination(Request $request, $id)
         $hotel->stars = $request->stars;
 
         if ($request->hasFile('hotel_image')) {
-            // Handle image upload for hotel
             $hotelImageName = time() . '.' . $request->hotel_image->extension();
             $request->hotel_image->move(public_path('images'), $hotelImageName);
             $hotel->image_url = 'images/' . $hotelImageName;
