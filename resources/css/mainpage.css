@@ -1,5 +1,4 @@
 body {
-    
     background-image: url('https://wallpaperaccess.com/full/89234.jpg');
     font-family: Arial, sans-serif;
 }
@@ -69,8 +68,8 @@ label {
     text-align: center;
     text-decoration: none;
     border-radius: 5px;
-    border: 2px solid #007BFF; /* Border color */
-    color: #007BFF; /* Text color */
+    border: 2px solid #007BFF; 
+    color: #007BFF; 
     
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -79,7 +78,7 @@ label {
 }
 
 #loginbutton:hover {
-    background-color: #007BFF; /* Background color on hover */
-    color: #fff; /* Text color on hover */
-    border-color: #007BFF; /* Border color on hover */
+    background-color: #007BFF; 
+    color: #fff; 
+    border-color: #007BFF; 
 }

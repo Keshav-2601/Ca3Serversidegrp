@@ -69,7 +69,7 @@ class HomePageController extends Controller{
         $destination->hotels()->save($hotel);
     }
 
-    return redirect()->route('adminhomepage')->with('success', 'Destination and Hotels created successfully.');
+    return redirect()->route('admin')->with('success', 'Destination and Hotels created successfully.');
 }
     public function editDestination($destination_id)
 {
@@ -131,7 +131,7 @@ public function updateDestination(Request $request, $id)
         $hotel->save();
     }
 
-    return redirect()->route('adminhomepage')->with('success', 'Destination and Hotel updated successfully.');
+    return redirect()->route('admin')->with('success', 'Destination and Hotel updated successfully.');
 }
 public function destroyDestination($id)
 {
@@ -144,7 +144,7 @@ public function destroyDestination($id)
     }
     $destination->delete();
 
-    return redirect()->route('adminhomepage')->with('success', 'Destination and associated hotel deleted successfully.');
+    return redirect()->route('admin')->with('success', 'Destination and associated hotel deleted successfully.');
 }
  public function showDestination($id)
     {
