@@ -1,28 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #e1dcdc;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    background-image: url('https://wallpaperaccess.com/full/9092559.jpg');
 }
 
 .container {
     margin-top: 50px;
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 .card {
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 255, 200);
 }
 
 .card-header {
     background-color: #007bff;
     color: white;
-    padding: 10px 20px;
+    padding: 20px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    font-size: 1.25em;
 }
 
 .card-body {
     padding: 20px;
+    background: white;
 }
 
 .form-group {
@@ -31,6 +41,8 @@ body {
 
 label {
     font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
@@ -39,8 +51,9 @@ textarea,
 input[type="file"] {
     width: 100%;
     padding: 10px;
-    border: 1px solid #040202;
+    border: 1px solid #ddd;
     border-radius: 5px;
+    font-size: 1em;
 }
 
 #hotels-container {
@@ -48,10 +61,11 @@ input[type="file"] {
 }
 
 .hotel-group {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 15px;
+    background: white;
 }
 
 #add-hotel {
@@ -63,18 +77,17 @@ button[type="submit"],
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    color: black;
+    color: white;
     cursor: pointer;
-}
-
-button[type="submit"],#add-hotel { 
-    background-color: #44a1fff3;
+    background-color: #007bff;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button[type="submit"]:hover,
 #add-hotel:hover {
-    background-color: #1680f1;
+    background-color: #0056b3;
 }
+
 #rating{
     border-radius: 5px;
     width: 100px;
