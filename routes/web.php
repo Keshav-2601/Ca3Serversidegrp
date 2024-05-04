@@ -29,9 +29,21 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
      Route::get('/', [HomePageController::class, 'index'])->name('Homepage');    
 });
+Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
+
  Route::get('/create-destination', [HomePageController::class, 'createDestination'])->name('homepage.createDestination');
  Route::post('/destination/store', [HomePageController::class, 'storeDestination'])->name('homepage.storeDestination');
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination'); 
  Route::get('/destinations/{id}/show',[HomePageController::class,'showDestination']) ->name('homepage.showDestination');  
+ Route::delete('/destinations/{id}', [HomePageController::class, 'destroyDestination'])->name('destination.delete');
+ Route::get('/admin', [HomePageController::class, 'showAdminPage'])->name('adminhomepage');
+ Route::put('/destinations/{id}', [HomePageController::class, 'updateDestination'])->name('destination.update');
+ Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');
+ Route::put('/destinations/{id}', [HomePageController::class, 'updateDestination'])->name('destination.update');
+   
+    Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');
+    
+    Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
+   
 
 require __DIR__.'/auth.php';
