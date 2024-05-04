@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e1dcdc;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #040202;
+    border-radius: 5px;
+}
+
+#hotels-container {
+    margin-bottom: 20px;
+}
+
+.hotel-group {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+#add-hotel {
+    margin-bottom: 20px;
+}
+
+button[type="submit"],
+#add-hotel {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    cursor: pointer;
+}
+
+button[type="submit"],#add-hotel { 
+    background-color: #44a1fff3;
+}
+
+button[type="submit"]:hover,
+#add-hotel:hover {
+    background-color: #1680f1;
+}
+#rating{
+    border-radius: 5px;
+    width: 100px;
+}
