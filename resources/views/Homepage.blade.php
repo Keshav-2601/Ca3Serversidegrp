@@ -44,6 +44,7 @@
 
         </div>
     </div>
-
-   
 @endsection
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/mainpage.css') }}">
+@endpush
