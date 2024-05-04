@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -45,4 +46,6 @@
         </div>
     </form>
     <a href="{{route('homepage')}}" >Login as Guest</a>
+
+
 </x-guest-layout>
