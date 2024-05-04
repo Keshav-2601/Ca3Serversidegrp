@@ -15,4 +15,8 @@ class Destination extends Model
     {
         return $this->hasMany(Image::class);
     }
+    public function hotels()
+    {
+        return $this->hasMany(Hotels::class);
+    }
 }

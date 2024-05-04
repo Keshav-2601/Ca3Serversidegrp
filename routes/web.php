@@ -36,14 +36,13 @@ Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestinati
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination'); 
  Route::get('/destinations/{id}/show',[HomePageController::class,'showDestination']) ->name('homepage.showDestination');  
  Route::delete('/destinations/{id}', [HomePageController::class, 'destroyDestination'])->name('destination.delete');
- Route::get('/admin', [HomePageController::class, 'showAdminPage'])->name('adminhomepage');
+ 
  Route::put('/destinations/{id}', [HomePageController::class, 'updateDestination'])->name('destination.update');
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');
  Route::put('/destinations/{id}', [HomePageController::class, 'updateDestination'])->name('destination.update');
    
-    Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');
-    
-    Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
+ Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');    
+ Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
    
 
 require __DIR__.'/auth.php';
