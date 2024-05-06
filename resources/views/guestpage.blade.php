@@ -24,9 +24,6 @@
 
     <div class="container">
         <h1>Destinations</h1>
-
-        <a href="{{ route('homepage.createDestination') }}">Add Destination</a>
-
         <div class="destination-list">
     @foreach ($destinations as $destination)
         <div class="destination-item">
@@ -39,22 +36,11 @@
             <div class="destination-info">
                 <h2>{{ $destination->name }}</h2>
                 <p>{{ $destination->description }}</p>
-                <div class="destination-actions">
-                    <a href="{{ route('homepage.showDestination', ['id' => $destination->id]) }}">View</a>
-                    <a href="{{ route('homepage.editDestination', ['id' => $destination->id]) }}">Edit</a>
-                    <form action="{{ route('destroydestination',$destination->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form>
-                </div>
+              
             </div>
         </div>
     @endforeach
-
-
         </div>
     </div>
-
-    
 @endsection
+

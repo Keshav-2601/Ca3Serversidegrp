@@ -44,7 +44,7 @@
             </x-primary-button>
         </div>
     </form>
-    <a id='guestlogin' href="{{route('homepage')}}" >Login as Guest</a>
-
+    <a id='guestlogin' href="{{route('guestpage')}}" >Login as Guest</a>
+    <a id='loginpageredirect' href="{{route('register')}}">Register account</a>
 
 </x-guest-layout>

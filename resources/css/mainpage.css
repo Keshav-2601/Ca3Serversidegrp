@@ -51,7 +51,7 @@ label {
 #forgotpassword{
     position:relative;
     top:5px;
-    left:255px;
+    left:350px;
     color: #08b2f5;
 }
 #guestlogin{
@@ -60,7 +60,7 @@ label {
     left:390px;
     color: #08b2f5;
 }
-#loginbutton {
+#loginbutton,#registerbutton {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -74,11 +74,18 @@ label {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     position: relative;
-    left:300px;
+    left:400px;
 }
 
-#loginbutton:hover {
+#loginbutton,#registerbutton:hover {
     background-color: #007BFF; 
     color: #fff; 
     border-color: #007BFF; 
 }
+#loginpageredirect{
+    position:relative;
+    top:255px;
+    left:420px;
+    color: #08b2f5;
+}
+

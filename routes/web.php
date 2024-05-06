@@ -1,3 +1,4 @@
+
 <?php
 
 use App\Http\Controllers\AdminController;
@@ -17,9 +18,10 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/admin', [HomePageController::class, 'showAdminPage'])->name('admin');
-
+route::get('/addhotelbyadmin',[HomePageController::class,'addhotelbyadminonly'])->name('addhotelbyadminonly');
 // Everyone can view the homepage, whether they're logged in or not
-Route::get('/homepage', [HomePageController::class, "index"])->name('homepage');
+//Route::get('/homepage', [HomePageController::class, "index"])->name('homepage');
+Route::get('/guestpage',[HomePageController::class,'guestpage'])->name('guestpage');
 Route::get('/hotels/{destination_id}',[HotelPageController::class,'show'])->name('hotelshowpage');
 
 // Only authenticated users can edit, update, or delete their profile
@@ -27,9 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-     Route::get('/', [HomePageController::class, 'index'])->name('Homepage');    
-});
-Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
+    Route::get('/', [HomePageController::class, 'index'])->name('Homepage'); 
+    Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
 
  Route::get('/create-destination', [HomePageController::class, 'createDestination'])->name('homepage.createDestination');
  Route::post('/destination/store', [HomePageController::class, 'storeDestination'])->name('homepage.storeDestination');
@@ -43,6 +44,10 @@ Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestinati
    
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');    
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
+ 
    
+});
+
+
 
 require __DIR__.'/auth.php';
