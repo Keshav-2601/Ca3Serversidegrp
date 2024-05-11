@@ -54,7 +54,7 @@ Setup your database credentials in the .env file:
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=d00253307blog1
+DB_DATABASE=ca3severside
 DB_USERNAME={USERNAME}
 DB_PASSWORD={PASSWORD}
 ```
