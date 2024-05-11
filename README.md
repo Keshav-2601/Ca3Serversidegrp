@@ -1,66 +1,66 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Dublin Tourist Attractions - Laravel Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a Laravel application developed for showcasing tourist attractions in Dublin. It provides a platform for users to explore, create, update, and delete their own Dublin destinations.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Guest Login**: Visitors can browse the site without needing to register or log in.
+- **CRUD Operations by Registered Users**: Registered users have the ability to create, read, update, and delete their own Dublin destinations.
+- **Admin Privileges**: In addition to the CRUD operations, admins have the ability to add more hotels, a feature not available to registered users.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Authors
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Keshav Verma**
+    - *Features Implemented*:
+    - Making all Database for project and seeding data into it
+    - Creating all the Models- Hotel,Images,Destinations.
+    - Making Authenticationa and Authorization part for the application.(Use laravel Breeze for this Reference: https://laravel.com/docs/11.x/starter-kits#laravel-breeze)
+    - Making Home page,Adminpage,Guest page for the application
+    - Making addhotelPage for the admin.
+    - Design the home page,edit page,create page,login page & register page using css(by creating css files)
+    - Controllers:Auth controllers.
+    - Dividing the application into 3 different layers one for guest,one for Admin, one for registered users.
+      
 
-## Learning Laravel
+- **Mohamad Ashik**
+    - *Features Implemented*: [Add the features you implemented here]
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Requirements
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 7.3 or higher
+- Node 12.13.0 or higher
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Getting Started
 
-## Laravel Sponsors
+Setting up your development environment on your local machine:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+git clone git@github.com:Keshav-2601/ca3Serversidegrp.git
+cd laravel-8-complete-blog
+cp .env.example .env
+composer install
+php artisan key:generate
+php artisan cache:clear && php artisan config:clear
+php artisan serve
 
-### Premium Partners
+##Before starting, create a database:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+mysql
+create database laravelblog;
+exit;
 
-## Contributing
+Setup your database credentials in the .env file:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=d00253307blog1
+DB_USERNAME={USERNAME}
+DB_PASSWORD={PASSWORD}
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#Built With
+Laravel - The web framework used
+[Any other technologies used in the project]
+License
+This project is licensed under the [License Name] - see the LICENSE.md file for details
