@@ -42,9 +42,8 @@ composer install
 php artisan key:generate
 php artisan cache:clear && php artisan config:clear
 php artisan serve
-
-##Before starting, create a database:
-
+```
+Before starting, create a database:
 mysql
 create database laravelblog;
 exit;
@@ -58,9 +57,5 @@ DB_DATABASE=d00253307blog1
 DB_USERNAME={USERNAME}
 DB_PASSWORD={PASSWORD}
 
-
-#Built With
+Built With
 Laravel - The web framework used
-[Any other technologies used in the project]
-License
-This project is licensed under the [License Name] - see the LICENSE.md file for details
