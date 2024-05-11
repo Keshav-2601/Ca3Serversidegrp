@@ -23,7 +23,14 @@ This is a Laravel application developed for showcasing tourist attractions in Du
       
 
 - **Mohamad Ashik**
-    - *Features Implemented*: [Add the features you implemented here]
+    - *Features Implemented*:
+    - Collaborated with Keshav Verma to design the database structure for the project.
+    - Created the homepage controller responsible for showing, editing, adding, and deleting destinations and hotels.
+    - Implemented functionality to add multiple hotels to destinations.
+    - Worked on the CSS design for the homepage, show page, and view page.
+    - Created additional functions for the admin role, including the search function.
+    - Utilized references such as tutorials and guides to implement CRUD operations effectively.
+    - Used references for CRUD operations from: (https://www.youtube.com/watch?v=DuwiTuXrBEI,https://www.youtube.com/watch?v=R58XZ8pAXoE)
 
 ## Requirements
 
