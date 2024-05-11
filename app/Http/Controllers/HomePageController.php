@@ -23,6 +23,16 @@ class HomePageController extends Controller{
         $destinations=Destination::with('images')->get();
         return view('adminhomepage', ['destinations'=>$destinations]);
     }
+      public function search(Request $request)
+    {
+     
+        $searchQuery = $request->input('query');
+
+        $destinations = Destination::where('name', 'like', "%$searchQuery%")
+                                    ->orWhere('description', 'like', "%$searchQuery%")
+                                    ->get();
+        return view('adminhomepage', compact('destinations', 'searchQuery'));
+    }
 
     public function createDestination()
     {
