@@ -16,7 +16,7 @@ This is a Laravel application developed for showcasing tourist attractions in Du
     - Creating all the Models- Hotel,Images,Destinations.
     - Making Authenticationa and Authorization part for the application.(Use laravel Breeze for this Reference: https://laravel.com/docs/11.x/starter-kits#laravel-breeze)
     - Making Home page,Adminpage,Guest page for the application
-    - Making addhotelPage for the admin.
+    - Making addhotelPage function for the admin.
     - Design the home page,edit page,create page,login page & register page using css(by creating css files)
     - Controllers:Auth controllers.
     - Dividing the application into 3 different layers one for guest,one for Admin, one for registered users.
@@ -24,7 +24,6 @@ This is a Laravel application developed for showcasing tourist attractions in Du
 
 - **Mohamad Ashik**
     - *Features Implemented*:
-    - Collaborated with Keshav Verma to design the database structure for the project.
     - Created the homepage controller responsible for showing, editing, adding, and deleting destinations and hotels.
     - Implemented functionality to add multiple hotels to destinations.
     - Worked on the CSS design for the homepage, show page, and view page.
