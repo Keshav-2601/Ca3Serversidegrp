@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function () {
    
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('destination.edit');    
  Route::get('/destinations/{id}/edit', [HomePageController::class, 'editDestination'])->name('homepage.editDestination');
- 
+Route::get('/search', [HomePageController::class, 'search'])->name('search'); 
    
 });
 
