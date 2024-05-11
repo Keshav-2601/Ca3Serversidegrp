@@ -30,7 +30,9 @@
                         <img src="{{ asset($hotel->image_url) }}" alt="Image for {{ $hotel->name }}">
                     </li>
                 @endforeach
-                <a href="{{ route('addhotelbyadminonly') }}" class="btn btn-primary">Add Hotel</a>
+                <a href="{{ route('addhotelbyadminonly') }}" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  Add Hotel
+               </a>
             </ul>
         @else
             <p>No hotels nearby</p>
